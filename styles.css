@@ -16,7 +16,7 @@ body {
 
 /* HEADER */
 header {
-    background: #4e0d13;
+    background: #510711;
     color: white;
     text-align: center;
     padding: 35px 20px;
@@ -44,7 +44,7 @@ main {
 main h2 {
     font-size: 28px;
     margin-bottom: 30px;
-    color: #1d4e89;
+    color: #510711;
 }
 
 /* WEEK CARDS */
@@ -72,7 +72,7 @@ main h2 {
 }
 
 .week-card h3 {
-    color: #1d4e89;
+    color: #510711;
     font-size: 24px;
     margin-bottom: 15px;
 }
@@ -86,7 +86,7 @@ main h2 {
 /* BUTTON */
 .week-card a {
     display: inline-block;
-    background: #1d4e89;
+    background: #510711;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -95,12 +95,12 @@ main h2 {
 }
 
 .week-card a:hover {
-    background: #163b69;
+    background: #510711;
 }
 
 /* FOOTER */
 footer {
-    background: #1d4e89;
+    background: #510711;
     color: white;
     text-align: center;
     padding: 18px;
