@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anduyan National High School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div class="splash-screen" id="splashScreen" role="dialog" aria-label="Welcome to Anduyan National High School">
+    <button class="splash-skip" type="button" id="skipSplash">Skip</button>
+    <div class="splash-content">
+        <div class="splash-logo-wrap">
+            <img src="logoo.jpg" class="splash-logo" alt="Anduyan National High School seal">
+        </div>
+        <p class="splash-eyebrow">Welcome to</p>
+        <h1>Anduyan National High School</h1>
+        <div class="splash-line"></div>
+        <p class="splash-motto">Cradle of Wisdom and Excellence</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- TOP INFORMATION BAR -->
+    <div class="topbar">
+        <span>Anduyan, Tubao, La Union</span>
+        <span>anduyannhs@dmmmsu.edu.ph</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img src="logoo.jpg" class="logo" alt="School Logo">
+
+        <div class="header-text">
+            <h1>Anduyan National High School</h1>
+            <p>--------CRADLE OF WISDOM AND EXCELLENCE--------</p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+
+        <div class="nav-left">
+            <a href="index.html" class="active">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="facilities.html">FACILITIES</a>
+            <a href="gradelevel.html">GRADE LEVEL</a>
+            <a href="contact.html">CONTACT US</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" onclick="showForm('login'); return false;">LOG IN</a>
+            <a href="#" onclick="showForm('register'); return false;">REGISTRATION</a>
+        </div>
+
+    </nav>
+
+    <!-- LOGIN AND REGISTRATION MODAL -->
+    <div class="auth-overlay" id="authOverlay">
+
+        <div class="auth-box">
+
+            <!-- CLOSE BUTTON -->
+            <button class="close-btn" onclick="closeForm()">&times;</button>
+
+            <!-- LOGIN FORM -->
+            <div id="loginForm">
+
+                <h2>LOG IN</h2>
+                <p>Welcome back to Anduyan National High School!</p>
+
+                <form onsubmit="event.preventDefault(); alert('Login form submitted!');">
+
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required>
+
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+
+                    <button type="submit" class="auth-btn">
+                        LOG IN
+                    </button>
+
+                </form>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <a href="#" onclick="showForm('register'); return false;">
+                        Register here
+                    </a>
+                </p>
+
+            </div>
+
+            <!-- REGISTRATION FORM -->
+            <div id="registerForm">
+
+                <h2>REGISTRATION</h2>
+                <p>Create your account to get started.</p>
+
+                <form onsubmit="event.preventDefault(); alert('Registration form submitted!');">
+
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required>
+
+                    <label>Password</label>
+                    <input type="password" placeholder="Create password" required>
+
+                    <label>Confirm Password</label>
+                    <input type="password" placeholder="Confirm password" required>
+
+                    <button type="submit" class="auth-btn">
+                        REGISTER
+                    </button>
+
+                </form>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <a href="#" onclick="showForm('login'); return false;">
+                        Log in here
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- SCHOOL BANNER -->
+        <section class="hero">
+            <img src="anhs.jpg" alt="Anduyan National High School">
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar">
+
+            <!-- ANNOUNCEMENT -->
+            <div class="side-card">
+
+                <h3>ANNOUNCEMENT</h3>
+
+                <div class="side-content">
+
+                    <h4>ENROLLMENT IS NOW OPEN!</h4>
+
+                    <p>
+                        Anduyan National High School officially opens
+                        its doors for School Year 2026-2027!
+                    </p>
+
+                    <p>
+                        Be part of a school that nurtures wisdom and excellence.
+                    </p>
+
+                    <h4>ENROLLMENT SCHEDULE:</h4>
+
+                    <p>
+                        Monday - Thursday | 8:00 AM - 4:00 PM
+                    </p>
+
+                    <p>
+                        Don't forget to bring the required documents.
+                    </p>
+
+                    <p>
+                        We can't wait to welcome you back to school!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="side-card">
+
+                <h3>MESSAGE</h3>
+
+                <div class="side-content">
+
+                    <p>
+                        Together, let's promote a safe and
+                        supportive learning environment!
+                    </p>
+
+                    <p class="signature">- Anduyan NHS</p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- BOTTOM SECTION -->
+    <section class="bottom-section">
+
+        <!-- MISSION AND VISION -->
+        <div class="bottom-card priority">
+
+            <h3>MISSION AND VISION</h3>
+
+            <div class="vision">
+
+                <h5>DepEd Vision</h5>
+
+                <p>
+                    We dream of Filipinos who passionately love their country
+                    and whose values and competencies enable them to realize
+                    their full potential and contribute meaningfully to
+                    building the nation.
+                </p>
+
+                <p>
+                    As a learner-centered public institution, the Department
+                    of Education continuously improves itself to better
+                    serve its stakeholders.
+                </p>
+
+            </div>
+
+            <div class="mission">
+
+                <h5>DepEd Mission</h5>
+
+                <p>
+                    To protect and promote the right of every Filipino to
+                    quality, equitable, culture-based, and complete basic
+                    education where:
+                </p>
+
+                <ul>
+                    <li>
+                        Students learn in a child-friendly, gender-sensitive,
+                        safe, and motivating environment.
+                    </li>
+
+                    <li>
+                        Teachers facilitate learning and constantly nurture
+                        every learner.
+                    </li>
+
+                    <li>
+                        Administrators and staff ensure an enabling and
+                        supportive environment for effective learning.
+                    </li>
+
+                    <li>
+                        Family, community, and other stakeholders are actively
+                        engaged and share responsibility for developing
+                        lifelong learners.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- SCHOOL HIGHLIGHTS -->
+        <div class="bottom-card highlights">
+
+            <h3>SCHOOL HIGHLIGHTS</h3>
+
+            <div class="highlight-images">
+
+                <div>
+                    <img src="SPORTS.jpg" alt="School Sports">
+                    <p>School Sports Competition</p>
+                </div>
+
+                <div>
+                    <img src="EVENT.jpg" alt="Academic Activities">
+                    <p>Academic Activities</p>
+                </div>
+
+                <div>
+                    <img src="ACTIVITY.jpg" alt="School Events">
+                    <p>School Events</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ANNOUNCEMENT DETAILS -->
+    <section class="announcement-details">
+
+        <h2>National Safety Week 2026</h2>
+
+        <p>
+            A safe school is more than a place of learning—it is a
+            community built on awareness, preparedness, inclusivity,
+            and care. Anduyan National High School officially marked
+            the opening of National School Safety Week 2026, bringing
+            together learners, teachers, and school personnel in
+            reaffirming their shared commitment to fostering a safe,
+            inclusive, and nurturing learning environment.
+
+            One of the highlights of the activity was the Recitation
+            of the "Panata para sa Ligtas, Inklusibo, at Maalagang
+            Paaralan," a meaningful pledge that strengthens our
+            collective responsibility to protect every learner,
+            respect every individual, and cultivate a culture of
+            safety, compassion, and accountability within our
+            school community.
+
+            As we observe National Safety Week, may we remember
+            that safety is not merely a promise we make, but a
+            responsibility we live every day.
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-school">
+
+            <img src="logoo.jpg" alt="School Logo">
+
+            <div>
+                <h4>Anduyan National High School</h4>
+                <p>Anduyan, Tubao, La Union</p>
+            </div>
+
+        </div>
+
+        <div class="footer-motto">
+            "Safety First, Always!"
+        </div>
+
+        <div class="copyright">
+            © 2026 Anduyan National High School.
+            <p>All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+</div>
+
+<!-- CONNECT JAVASCRIPT FILE -->
+<script src="app.js"></script>
+
+</body>
+</html>

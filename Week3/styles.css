@@ -1,0 +1,744 @@
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3e9dc;
+    color: #333;
+}
+
+/* SPLASH SCREEN */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(231, 181, 46, 0.18), transparent 28%),
+        linear-gradient(145deg, #510912 0%, #710c1c 58%, #8a1023 100%);
+    color: #fffaf0;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.splash-screen::before,
+.splash-screen::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(231, 181, 46, 0.22);
+    transform: rotate(45deg);
+}
+
+.splash-screen::before {
+    top: -210px;
+    right: -150px;
+}
+
+.splash-screen::after {
+    bottom: -210px;
+    left: -150px;
+}
+
+.splash-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 680px);
+    text-align: center;
+    animation: splashReveal 0.9s ease both;
+}
+
+.splash-logo-wrap {
+    width: 135px;
+    height: 135px;
+    margin: 0 auto 22px;
+    padding: 7px;
+    border: 2px solid #e7b52e;
+    border-radius: 50%;
+    background: #fffaf0;
+    box-shadow: 0 12px 35px rgba(32, 0, 5, 0.35);
+}
+
+.splash-logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.splash-eyebrow {
+    margin-bottom: 8px;
+    color: #f2cf75;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.splash-content h1 {
+    font-family: "Times New Roman", serif;
+    font-size: clamp(38px, 7vw, 72px);
+    line-height: 1.05;
+}
+
+.splash-line {
+    width: 90px;
+    height: 3px;
+    margin: 22px auto 16px;
+    background: #e7b52e;
+}
+
+.splash-motto {
+    font-family: "Times New Roman", serif;
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.splash-skip {
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    right: 28px;
+    border: 1px solid rgba(255, 250, 240, 0.55);
+    border-radius: 999px;
+    background: transparent;
+    color: #fffaf0;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.splash-skip:hover,
+.splash-skip:focus-visible {
+    border-color: #e7b52e;
+    background: #e7b52e;
+    color: #650b18;
+    outline: none;
+}
+
+@keyframes splashReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .splash-screen,
+    .splash-content {
+        transition: none;
+        animation: none;
+    }
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+
+/* TOP BAR */
+.topbar {
+    background: #650b18;
+    color: white;
+    padding: 9px 3%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+
+/* HEADER */
+.header {
+    background: #f6ead5;
+    min-height: 115px;
+    display: flex;
+    align-items: center;
+    padding: 12px 5%;
+    gap: 20px;
+    border-bottom: 4px solid #e7b52e;
+}
+
+.logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    border-radius: 50%;
+    
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 38px;
+    color: #650b18;
+    text-align: center;
+    text-shadow: -9px 0px 7px rgba(116,29,7,0.69);
+}
+
+.header-text p {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+/* NAVIGATION BAR */
+.navbar {
+    background: #710c1c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    min-height: 45px;
+    gap: 5px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    background: #e6ae20;
+    color: #650b18;
+}
+
+.navbar .active {
+    background: #e6ae20;
+    color: #650b18;
+}
+
+
+/* LOGIN AND REGISTRATION OVERLAY */
+.auth-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+    overflow-y: auto;
+}
+
+
+/* LOGIN AND REGISTRATION BOX */
+.auth-box {
+    position: relative;
+    background: #fffaf0;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: #710c1c;
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 10px;
+}
+
+.auth-box p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    border: none;
+    background: none;
+    color: #650b18;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #e6ae20;
+}
+
+
+/* FORM INPUTS */
+.auth-box label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #650b18;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+}
+
+.auth-box input:focus {
+    border-color: #710c1c;
+    box-shadow: 0 0 4px rgba(113, 12, 28, 0.2);
+}
+
+
+/* LOGIN AND REGISTER BUTTON */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #710c1c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #e6ae20;
+    color: #650b18;
+}
+
+
+/* SWITCH LOGIN AND REGISTRATION */
+.switch-text {
+    margin-top: 18px;
+}
+
+.switch-text a {
+    color: #710c1c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* HIDE REGISTRATION FORM BY DEFAULT */
+#registerForm {
+    display: none;
+}
+
+
+/* MAIN CONTENT */
+.main-content {
+    display: grid;
+    grid-template-columns: 3fr 1.3fr;
+    gap: 15px;
+    padding: 15px 2%;
+}
+
+
+/* SCHOOL BANNER */
+.hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+.hero > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 85px;
+    background: linear-gradient(
+        transparent,
+        rgba(101, 11, 24, 0.95)
+    );
+    padding: 15px;
+}
+
+
+/* RIGHT SIDEBAR */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.side-card {
+    width: 100%;
+    min-height: 180px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.side-card h3 {
+    background: #710c1c;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.side-content {
+    padding: 12px;
+}
+
+.side-content h4 {
+    color: #650b18;
+    font-size: 13px;
+    margin-bottom: 7px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.side-content p {
+    font-size: 10px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+
+/* BOTTOM SECTION */
+.bottom-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 15px;
+    padding: 0 2% 15px;
+}
+
+.bottom-card {
+    background: #fffaf0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 165px;
+}
+
+.bottom-card h3 {
+    background: #710c1c;
+    color: white;
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* MISSION AND VISION */
+.priority h3 {
+    margin-bottom: 25px;
+}
+
+.priority h5 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.priority p {
+    text-align: justify;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 5px 2% 15px;
+}
+
+.priority ul {
+    padding-left: 25px;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.priority li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.vision {
+    margin-bottom: 30px;
+}
+
+.mission {
+    margin-top: 20px;
+}
+
+
+/* SCHOOL HIGHLIGHTS */
+.highlight-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 12px;
+}
+
+.highlight-images img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.highlight-images p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+
+/* ANNOUNCEMENT DETAILS */
+.announcement-details {
+    background: white;
+    margin: 5px 2% 15px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.announcement-details h2 {
+    color: #710c1c;
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 10px;
+}
+
+.announcement-details p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* FOOTER */
+.footer {
+    background: #650b18;
+    color: white;
+    border-top: 5px solid #e6ae20;
+    padding: 15px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-school {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-school img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.footer-school h4 {
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+}
+
+.footer-school p,
+.copyright {
+    font-size: 10px;
+}
+
+.footer-motto {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 10px 35px;
+}
+
+.copyright {
+    text-align: right;
+    line-height: 1.5;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .topbar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .header {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .header-text h1 {
+        font-size: 25px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .nav-left,
+    .nav-right {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-right {
+        margin-left: 0;
+    }
+
+    .navbar a {
+        padding: 12px 8px;
+        font-size: 10px;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        margin-top: 0;
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero-overlay h2 {
+        font-size: 17px;
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-motto {
+        border: none;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .auth-box {
+        max-width: 350px;
+        padding: 25px;
+    }
+
+}
+
+
+/* SMALL SCREENS */
+@media (max-width: 480px) {
+
+    .hero {
+        height: 200px;
+    }
+
+    .hero-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .hero-overlay h2 {
+        font-size: 14px;
+    }
+
+    .hero-overlay p {
+        font-size: 10px;
+    }
+
+    .highlight-images {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-images img {
+        height: 180px;
+    }
+
+    .auth-box {
+        padding: 25px 20px;
+    }
+
+}

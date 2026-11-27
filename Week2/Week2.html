@@ -1,59 +1,143 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMMMSU Campus Notices</title>
+    <title>Campus Notices</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div class="container">
-
-    <header class="header">
-        <img src="logo.png" class="logo" alt="DMMMSU Logo">
-        <h1>Don Mariano Marcos Memorial State University</h1>
+    <!-- HEADER -->
+    <header>
+        <h1>Campus Notices</h1>
     </header>
 
-    <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">CONTACT US</a>
+    <!-- NAVIGATION -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="#notices">Notices</a></li>
+            <li><a href="#deadlines">Deadlines</a></li>
+            <li><a href="#submit">Post a Notice</a></li>
+        </ul>
     </nav>
 
-    <main class="content">
-        <h2>CAMPUS NOTICE</h2>
+    <!-- MAIN CONTENT -->
+    <main>
 
-        <div class="images">
-            <img src="pilipinas.jpeg" alt="Image 1">
-            <img src="Pink_flower.jpg" alt="Image 2">
-            <img src="OIP.webp" alt="Image 3">
-        </div>
+        <!-- NOTICES SECTION -->
+        <section id="notices">
+            <h2>Latest Notices</h2>
+
+            <article class="notice">
+                <h3>Library Hours Extended</h3>
+
+                <p class="meta">
+                    <time datetime="2026-10-12">12 October 2026</time>
+                    · <span class="tag">Academic</span>
+                </p>
+
+                <p>
+                    The library stays open until 9 PM during midterm week.
+                </p>
+            </article>
+        </section>
+
+        <!-- DEADLINES SECTION -->
+        <section id="deadlines">
+            <h2>Important Deadlines</h2>
+
+            <table>
+                <caption>Deadlines this month</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Enrolment ends</td>
+                        <td>20 January</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programming contest registration</td>
+                        <td>25 January</td>
+                    </tr>
+
+                    <tr>
+                        <td>Project submission</td>
+                        <td>30 January</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- POST NOTICE SECTION -->
+        <section id="submit">
+            <h2>Post a Notice</h2>
+
+            <form action="#" method="post">
+
+                <p>
+                    <label for="title">Title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        maxlength="100"
+                        required>
+                </p>
+
+                <p>
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="academic">Academic</option>
+                        <option value="event">Event</option>
+                        <option value="general">General</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date">
+                </p>
+
+                <p>
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        required></textarea>
+                </p>
+
+                <p>
+                    <label for="email">Your Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+                </p>
+
+                <button type="submit">Post Notice</button>
+
+            </form>
+        </section>
+
     </main>
 
-    <aside class="right">
-        
-        <form action="/api/notices" method="post">
-
-            <label for="title">Title</label>
-            <input id="title"
-                   name="title"
-                   type="text"
-                   required>
-
-            <label for="msg">Message</label>
-            <textarea id="msg"
-                      name="message"
-                      required></textarea>
-
-            <button type="submit">Post Notice</button>
-
-        </form>
-    </main>
-
-    <aside></aside>
-
-    <footer>  College of Computer Science</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>College of Computer Science, DMMMSU-SLUC</p>
+    </footer>
 
 </body>
 </html>
